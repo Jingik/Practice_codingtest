@@ -9,7 +9,7 @@ def dec_to_bin(n):
     elif n == 0:
         return str(0)
     
-    return dec_to_bin((n // 2) % 2) + dec_to_bin(n // 2)
+    return dec_to_bin((n // 2) % 2) + dec_to_bin(n // 2) 
 
 
 
@@ -22,4 +22,7 @@ def dec_to_bin(n):
 ############## 테스트 코드 삭제 금지 #################
 print(dec_to_bin(55))   # 110111
 print(dec_to_bin(15))   # 1111
+print(dec_to_bin(0))   # 1111
+print(dec_to_bin(128))   # 1111
+
 #####################################################
