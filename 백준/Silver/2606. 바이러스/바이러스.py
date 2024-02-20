@@ -1,9 +1,8 @@
 def Dfs(idx):
     visited.append(idx)
     for node in Graph[idx]:
-        if node in visited:
-            continue    
-        Dfs(node)
+        if node not in visited:
+            Dfs(node)
 
 import sys
 input = sys.stdin.readline
@@ -15,6 +14,7 @@ for _ in range(N):
     a, b = map(int, input().split())
     Graph[a] += [b]
     Graph[b] += [a]
+    
 Dfs(1)
 
 print(len(visited) - 1)
