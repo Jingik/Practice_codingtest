@@ -7,9 +7,10 @@ while True:
     k = array[0]
     S = array[1:]
 
+    if k == 0:
+        break
+        
     for i in itertools.combinations(S, 6):
         print(*i)
 
-    if k == 0:
-        exit()
     print()
