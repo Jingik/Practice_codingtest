@@ -1,17 +1,22 @@
 import sys
 input = sys.stdin.readline
-
-task, result = [], 0
+Stack_Answer = []
+Stack_term = []
+Result = 0
 for _ in range(int(input())):
-    new_task = list(map(int,input().split()))
-    if new_task[0] == 1:
-        task.append((new_task[1], new_task[2]))
-    
-    if task:
-        score, time = task.pop()
-        time -= 1
-        if time == 0:
-            result += score
+    List = list(map(int, input().split()))
+    if List[0] == 1:
+        Stack_term.append(List[2])
+        Stack_Answer.append(List[1])
+    if Stack_term:
+        score = Stack_term.pop()
+        time = Stack_Answer.pop()
+        score -= 1
+        if score == 0:
+            Result += time
         else:
-            task.append((score,time))
-print(result)
+            Stack_term.append(score)
+            Stack_Answer.append(time)
+
+print(Result)
+            
