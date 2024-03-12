@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 31252 KB, 시간: 56 ms
+메모리: 31120 KB, 시간: 40 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 3월 12일 23:31:04
+2024년 3월 12일 23:47:07
 
 ### 문제 설명
 
@@ -22,7 +22,7 @@
 
 <p>세현이는 학교에서 집으로 가는 경로에서 만나는 숫자와 연산자의 연산 결과의 최댓값과 최솟값을 구하려고 한다. 세현이는 항상 자신의 집 (1, 1)에서 학교 (N, N)까지 최단거리로 이동한다. 최단거리로 이동하기 위해서는 오른쪽과 아래쪽으로만 이동해야 한다.</p>
 
-<p style="text-align: center;"><img alt="" src="" style="height: 298px; width: 600px;"></p>
+<p style="text-align: center;"><img alt="" src="https://upload.acmicpc.net/52b1ed3b-b434-4cb7-b532-ce8658764c08/-/preview/" style="height: 298px; width: 600px;"></p>
 
 <p>위와 같이 N = 5 인 5 x 5 바둑판을 만들었다고 해보자.<img alt="" src="https://www.acmicpc.net/problem/%EB%B0%94%ED%83%95%ED%99%94%EB%A9%B4/%EC%BA%A1%EC%B2%982.jpg"></p>
 
