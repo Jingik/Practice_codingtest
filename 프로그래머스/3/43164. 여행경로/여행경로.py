@@ -3,7 +3,6 @@ def solution(tickets):
     answer = []
     def dfs():
         if len(stack) == n+1 :
-            a = [stack[i] for i in range(n+1)]
             answer.append(stack.copy())
         for i in range(n):
             if not visited[i] and stack[-1] == tickets[i][0] :
