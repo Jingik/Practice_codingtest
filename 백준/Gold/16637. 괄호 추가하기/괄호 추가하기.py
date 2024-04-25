@@ -5,7 +5,7 @@ data = list(map(lambda x: int(x) if x.isdigit() else x, input()))
 result = -int(1e9)
 
 
-def calculate(num1, num2, s):  # 연산자 s에 따라 계산처리
+def calculate(num1, num2, s): 
     if s == '+':
         return num1 + num2
     elif s == '-':
@@ -13,21 +13,19 @@ def calculate(num1, num2, s):  # 연산자 s에 따라 계산처리
     elif s == '*':
         return num1 * num2
 
-
-def dfs(idx, prev):
+def Dfs(lev, pre_sum):
     global result
-    if idx >= N:  # 연산이 끝났을 때
-        result = max(result, prev)  # 최댓값 갱신
+    if lev >= N:  
+        result = max(result, pre_sum)  
         return
-    if idx + 3 < N:  # 괄호 사용 가능
-        # 현재 연산자 위치 다음에 나오는 연산자에 대해 괄호로 묶어 계산
-        dfs(idx + 4, calculate(prev, calculate(data[idx + 1], data[idx + 3], data[idx + 2]), data[idx]))
-    dfs(idx + 2, calculate(prev, data[idx + 1], data[idx]))  # 괄호로 묶지 않고 계산
+    if lev + 3 < N: 
+        Dfs(lev + 4, calculate(pre_sum, calculate(data[lev + 1], data[lev + 3], data[lev + 2]), data[lev]))
+        
+    Dfs(lev + 2, calculate(pre_sum, data[lev + 1], data[lev]))  
 
-
-if N == 1:  # 주어진 수가 하나일 때
+if N == 1:  
     result = data[0]
 else:
-    dfs(1, data[0])
+    Dfs(1, data[0])
 
 print(result)
