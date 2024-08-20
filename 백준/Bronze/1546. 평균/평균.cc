@@ -6,7 +6,7 @@ int main() {
     int N;
     cin >> N;
 
-    vector<int> vec(N);
+    vector<double> vec(N);
     int Max_num = 0;
     double result = 0;
 
@@ -17,7 +17,7 @@ int main() {
     }
 
     for (int i = 0; i < N; i++){
-        result += (static_cast<double>(vec[i]) / Max_num) * 100;
+        result += (vec[i] / Max_num) * 100;
     }
 
     cout << result / N << endl;
