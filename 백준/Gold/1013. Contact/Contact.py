@@ -1,6 +1,6 @@
 import re
 import sys
-
+#.
 T = int(sys.stdin.readline())
 results = []
 
