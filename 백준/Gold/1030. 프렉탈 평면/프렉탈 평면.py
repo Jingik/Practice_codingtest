@@ -1,6 +1,6 @@
 import sys
 input = sys.stdin.readline
-
+#.
 def check_black(l, point):
     x,y = point # 현재 탐색중인 좌표
     center = l//N # 검정색 칸의 범위
