@@ -1,7 +1,7 @@
 import sys
 from collections import deque
 input = sys.stdin.readline
-
+# .
 V = int(input())
 tree = [[] for _ in range(V+1)]
 # 2차원 리스트에 트리 저장(연결 그래프)
