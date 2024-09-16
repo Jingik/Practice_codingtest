@@ -1,6 +1,6 @@
 import sys
 a,b,c = map(int,sys.stdin.readline().split())
-
+#.
 def multi (a,n):
   if n == 1:
       return a%c
