@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cctype>
 using namespace std;
-
+#
 int main() {
 	long double N, L;
 	cin >> N >> L;
