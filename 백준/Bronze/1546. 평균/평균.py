@@ -1,7 +1,7 @@
 import sys
 
 input =sys.stdin.readline
-
+#
 N = int(input())
 List = list(map(int, input().split()))
 Max = max(List)
