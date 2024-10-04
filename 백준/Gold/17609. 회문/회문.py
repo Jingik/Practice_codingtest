@@ -1,28 +1,30 @@
-def is_palindrome(s, left, right):
-    while left < right:
-        if s[left] != s[right]:
-            return False
-        left += 1
-        right -= 1
-    return True
+import sys
+input = sys.stdin.readline
 
-def is_pseudo_palindrome(s, left, right):
-    return is_palindrome(s, left + 1, right) or is_palindrome(s, left, right - 1)
+def is_palindrome(a):
+    return a[::-1] == a
 
-N = int(input())
-for _ in range(N):
-    sample = input().strip()
-    left, right = 0, len(sample) - 1
-    
-    while left < right:
-        if sample[left] != sample[right]:
-
-            if is_pseudo_palindrome(sample, left, right):
-                print(1) 
-            else:
-                print(2) 
+def is_pseudo_pal(a):
+    if len(a) == 2:
+        return True
+    if is_palindrome(a[1:]) or is_palindrome(a[:-1]):
+        return True
+    if a[0] != a[-1]:
+        return False
+    diff_i = 1
+    for i in range(1,len(a)//2):
+        if a[i] != a[~i]:
+            diff_i = i
             break
-        left += 1
-        right -= 1
-    else:
-        print(0)  
+
+    return is_pseudo_pal(a[diff_i:~diff_i+1])
+T = int(input())
+for _ in range(T):
+    s = input().rstrip()
+    ans = 2
+    if is_palindrome(s):
+        ans = 0
+    elif is_pseudo_pal(s):
+        ans = 1
+    print(ans)
+
