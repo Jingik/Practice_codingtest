@@ -11,7 +11,7 @@ left, right = 0, 1
 Min_de = float('inf')
 while right < N:
     current = List[right] - List[left]
-    if current >= M :
+    if current >= M:
         Min_de = min(current, Min_de)
         left += 1
         if left == right:
