@@ -1,19 +1,29 @@
 import sys
+input = sys.stdin.readline
 
-if __name__ == '__main__':
-    N = int(input())
-    arr = list(map(int, sys.stdin.readline().split()))
-    arr.sort()
-    ans = 0
+N = int(input())
+Num_list = list(map(int, input().split()))
+total_count = 0
+Num_list.sort()
 
-    for i in range(N):
-        tmp = arr[:i] + arr[i + 1:]
-        left, right = 0, len(tmp) - 1
-        while left < right:
-            t = tmp[left] + tmp[right]
-            if t == arr[i]:
-                ans += 1
-                break
-            if t < arr[i]: left += 1 # t 를 증가시켜야 하므로 left 증가
-            else: right -= 1 # t 를 감소시켜야 하므로 right 감소
-    print(ans)
+for num in range(N):
+    left = 0
+    right = N - 1
+    while left < right:
+        if left == num:
+            left += 1
+            continue
+        if right == num:
+            right -= 1
+            continue
+        current = Num_list[left] + Num_list[right]
+        target = Num_list[num]
+        if target < current:
+            right -= 1
+        elif target > current:
+            left += 1
+        else:
+            total_count += 1
+            break
+print(total_count)    
+    
