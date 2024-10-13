@@ -5,7 +5,7 @@ g = [list(map(str, list(input().strip()))) for _ in range(5)]
 numOfNum = [0 for _ in range(n)] # 해당 자릿수에 나올 수 있는 숫자 개수
 sumOfNum = [0 for _ in range(n)] # 해당 자릿수에 나올 수 있는 숫자들의 합
 totalNum = 1 # 나올 수 있는 경우의 수
-ans = 0 # .정답
+ans = 0 # .정답.
 
 # 숫자 별 '.'이 들어가 있는 좌표를 해시에 저장
 numHt = { 0 : [[1, 1], [2, 1], [3, 1]],
