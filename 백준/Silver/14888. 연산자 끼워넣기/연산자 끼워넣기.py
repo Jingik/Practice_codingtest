@@ -2,7 +2,7 @@ n=int(input())
 a=list(map(int,input().split()))
 oper=list(map(int,input().split()))
 result=[]
-
+#
 def dfs(cnt,p,minus,mul,d,now):
     if cnt==n-1:
         result.append(now)
