@@ -1,6 +1,6 @@
 import sys
 input = sys.stdin.readline
-
+#
 n, c, w = map(int, input().split())
 trees = [int(sys.stdin.readline()) for _ in range(n)]
 max_money = 0
