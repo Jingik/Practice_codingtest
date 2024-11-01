@@ -1,5 +1,5 @@
 from sys import stdin
-#.
+
 MAX = 10 ** 6
 dest = int(input())
 num_of_broken = int(input())
