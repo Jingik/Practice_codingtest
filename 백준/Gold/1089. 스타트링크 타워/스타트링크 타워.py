@@ -1,4 +1,5 @@
 import sys
+#,
 input = sys.stdin.readline
 n = int(input())
 g = [list(map(str, list(input().strip()))) for _ in range(5)]
