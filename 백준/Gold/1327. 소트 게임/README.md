@@ -1,5 +1,5 @@
 # [Gold IV] 소트 게임 - 1327 
-.
+
 [문제 링크](https://www.acmicpc.net/problem/1327) 
 
 ### 성능 요약
