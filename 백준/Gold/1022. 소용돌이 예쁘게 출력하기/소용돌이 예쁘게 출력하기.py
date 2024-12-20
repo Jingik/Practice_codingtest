@@ -1,6 +1,6 @@
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
-
+#
 r1,c1,r2,c2 = map(int,input().split())
 hurricane = [[0 for _ in range(c2-c1+1)] for _ in range(r2-r1+1)]
 total = (c2-c1+1) * (r2-r1+1)
