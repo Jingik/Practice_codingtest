@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 
 using namespace std;
@@ -20,7 +19,8 @@ int main() {
     int n;
     cin >> n;
 
-    vector<Meeting> meetings(n);
+    // 동적 배열 할당
+    Meeting* meetings = new Meeting[n];
 
     // 입력 받기
     for (int i = 0; i < n; i++) {
@@ -28,10 +28,10 @@ int main() {
     }
 
     // 끝나는 시간을 기준으로 정렬
-    sort(meetings.begin(), meetings.end(), compare);
+    sort(meetings, meetings + n, compare);
 
-    int count = 0; // 사용할 수 있는 최대 회의 개수
-    int end_time = 0; // 마지막 회의의 끝나는 시간
+    int count = 0;         // 사용할 수 있는 최대 회의 개수
+    int end_time = 0;      // 마지막 회의의 끝나는 시간
 
     for (int i = 0; i < n; i++) {
         // 현재 회의가 이전 회의와 겹치지 않으면 선택
@@ -42,6 +42,9 @@ int main() {
     }
 
     cout << count << endl;
+
+    // 동적 메모리 해제
+    delete[] meetings;
 
     return 0;
 }
