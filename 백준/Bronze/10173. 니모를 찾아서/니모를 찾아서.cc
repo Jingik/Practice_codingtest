@@ -6,25 +6,22 @@ using namespace std;
 
 int main()
 {
-    string text;
     while (true) {
-        getline(cin, text);
+        string text;
 
+        getline(cin, text);
         if (text == "EOI") {
             break;
         }
 
-        string lowercaseText = text;
-        transform(lowercaseText.begin(), lowercaseText.end(), lowercaseText.begin(), ::tolower);
+        transform(text.begin(), text.end(), text.begin(), ::tolower);
 
-        if (lowercaseText.find("nemo") != string::npos) {
-            cout << "Found";
-        }
-        else {
-            cout << "Missing";
-        }
-        cout << endl;
+		if (text.find("nemo") != string::npos) {
+			cout << "Found" << endl;
+		}
+		else {
+			cout << "Missing" << endl;
+		}
     }
-
     return 0;
 }
