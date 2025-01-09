@@ -1,28 +1,29 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
 #include <vector>
-
 using namespace std;
+
+const int OFFSET = 1000000; 
 
 int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    //string exam[1000000];
-    int num;
-    cin >> num;
-    vector <int> exam(num);
-    for (int i = 0; i < num; i++) {
-        cin >> exam[i];
+    cin.tie(NULL); 
+
+    int N;
+    cin >> N;
+
+    vector<bool> presence(2000001, false);
+
+    for (int i = 0; i < N; i++) {
+        int num;
+        cin >> num;
+        presence[num + OFFSET] = true; 
     }
 
-    sort(exam.begin(), exam.end());
-    
-    for (int i = 0; i < num; i++) {
-        if (i > 0 && exam[i] == exam[i - 1]) {
-            continue;
+
+    for (int i = 0; i <= 2000000; i++) {
+        if (presence[i]) {
+            cout << i - OFFSET << '\n'; 
         }
-        cout << exam[i] << '\n';
     }
 
     return 0;
