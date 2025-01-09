@@ -7,14 +7,16 @@
 using namespace std;
 
 bool compare(const string& a, const string& b) {
-    if (a.size() == b.size()) {
+    if (a.length() == b.length()) {
         return a < b;
     }
-    return a.size() < b.size();
+    return a.length() < b.length();
 }
 
 int main()
 {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int num;
     cin >> num;
 
