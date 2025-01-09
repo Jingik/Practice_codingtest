@@ -1,32 +1,31 @@
 #include <iostream>
 #include <string>
-#include <algorithm>
-#include <vector>
-#include <set>
-
 using namespace std;
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-	int exam[10000];
-
     int num;
     cin >> num;
-	int number = 0;
-	for (int i = 666; i < 10000000; i++) {
-		string str = to_string(i);
-		if (str.find("666") != string::npos) {
-			exam[number] = i;
-			number++;
-		}
-		if (number == num) {
-			break;
-		}
-	}
 
-	cout << exam[num - 1] << endl;
+    int count = 0; // 찾은 숫자의 개수
+    int current = 666; // 첫 번째 숫자 시작
+
+    while (true) {
+        string str = to_string(current);
+        if (str.find("666") != string::npos) {
+            count++; // "666" 포함된 숫자를 찾으면 증가
+        }
+
+        // 찾은 숫자가 입력 개수와 같다면 출력하고 종료
+        if (count == num) {
+            cout << current << endl;
+            break;
+        }
+
+        current++; // 다음 숫자로 이동
+    }
 
     return 0;
 }
