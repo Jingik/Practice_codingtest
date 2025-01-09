@@ -1,31 +1,41 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int num;
-    cin >> num;
-
-    int count = 0; // 찾은 숫자의 개수
-    int current = 666; // 첫 번째 숫자 시작
+    int N, cnt = 0, i = 0, NUM;
+    cin >> N;
 
     while (true) {
-        string str = to_string(current);
-        if (str.find("666") != string::npos) {
-            count++; // "666" 포함된 숫자를 찾으면 증가
-        }
+        if (cnt == N) break;
 
-        // 찾은 숫자가 입력 개수와 같다면 출력하고 종료
-        if (count == num) {
-            cout << current << endl;
-            break;
+        if (i % 1000 == 666) {
+            for (int j = 0; j < 1000; j++) {
+                NUM = i * 1000 + j;
+                cnt++;
+                if (cnt == N) break;
+            }
+            i++;
+        } else if (i % 100 == 66) {
+            for (int j = 0; j < 100; j++) {
+                NUM = i * 1000 + 600 + j;
+                cnt++;
+                if (cnt == N) break;
+            }
+            i++;
+        } else if (i % 10 == 6) {
+            for (int j = 0; j < 10; j++) {
+                NUM = i * 1000 + 660 + j;
+                cnt++;
+                if (cnt == N) break;
+            }
+            i++;
+        } else {
+            NUM = i * 1000 + 666;
+            cnt++;
+            i++;
         }
-
-        current++; // 다음 숫자로 이동
     }
 
+    cout << NUM << endl;
     return 0;
 }
